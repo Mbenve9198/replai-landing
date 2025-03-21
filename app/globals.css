@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+  --card: 0 0% 0%;
+  --card-foreground: 0 0% 100%;
+  --popover: 0 0% 0%;
+  --popover-foreground: 0 0% 100%;
+  --primary: 220 70% 50%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 280 50% 50%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 0 0% 100%;
+  --muted-foreground: 0 0% 50%;
+  --accent: 280 50% 50%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 15 100% 65%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 220 70% 50%;
+  --input: 220 70% 50%;
+  --ring: 220 70% 50%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+  --card: 0 0% 0%;
+  --card-foreground: 0 0% 100%;
+  --popover: 0 0% 0%;
+  --popover-foreground: 0 0% 100%;
+  --primary: 220 70% 50%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 280 50% 50%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 0 0% 100%;
+  --muted-foreground: 0 0% 50%;
+  --accent: 280 50% 50%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 15 100% 65%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 220 70% 50%;
+  --input: 220 70% 50%;
+  --ring: 220 70% 50%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-manrope), system-ui, sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-manrope), system-ui, sans-serif;
+    font-weight: 700;
+  }
+  button,
+  a {
+    font-family: var(--font-manrope), system-ui, sans-serif;
+  }
+}
+
+.bg-glow {
+  background: radial-gradient(
+    circle at center,
+    rgba(43, 94, 207, 0.3),
+    rgba(139, 79, 209, 0.2),
+    rgba(255, 123, 92, 0.1)
+  );
+}
+
+.text-gradient {
+  @apply bg-gradient-brand bg-clip-text text-transparent;
+}
+
+.border-gradient {
+  border-image: linear-gradient(to right, #1b3b8c, #8b4fd1, #ff7b5c) 1;
+}
+
+@keyframes glow-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-glow-spin {
+  animation: glow-spin 20s linear infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
